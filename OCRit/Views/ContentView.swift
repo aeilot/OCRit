@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("ai_api_key") var aiAPIKey: String = ""
+    @AppStorage("api_key_set") var apiKeyUnset: Bool = true
+    
     var body: some View {
         VStack {
             Text("OCR it!")
@@ -17,6 +20,23 @@ struct ContentView: View {
             ImagePasteBox()
         }
         .padding().frame(width: 500, height: 400)
+        .sheet(isPresented: $apiKeyUnset) {
+            VStack{
+                Text("Set your API Key for Silicon Flow Here").font(.title)
+                TextField("API Key", text: $aiAPIKey).textContentType(.password).onSubmit {
+                    if !aiAPIKey.isEmpty {
+                        apiKeyUnset = false
+                    }
+                }
+                Text("Get your key at https://siliconflow.cn/").font(.footnote).foregroundStyle(.secondary)
+            }.padding()
+        }.onAppear {
+            if aiAPIKey.isEmpty {
+                apiKeyUnset = true
+            } else {
+                apiKeyUnset = false
+            }
+        }
     }
 }
 

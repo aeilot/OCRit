@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E37A47932EC30C6100FBEFE5 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = E37A47922EC30C6100FBEFE5 /* OpenAI */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		E312C7482EC2F85C0003E8F1 /* OCRit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCRit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E37A47932EC30C6100FBEFE5 /* OpenAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = OCRit;
 			packageProductDependencies = (
+				E37A47922EC30C6100FBEFE5 /* OpenAI */,
 			);
 			productName = OCRit;
 			productReference = E312C7482EC2F85C0003E8F1 /* OCRit.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = E312C73F2EC2F85C0003E8F1;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E37A47912EC30C6100FBEFE5 /* XCRemoteSwiftPackageReference "OpenAI" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E312C7492EC2F85C0003E8F1 /* Products */;
 			projectDirPath = "";
@@ -333,6 +342,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E37A47912EC30C6100FBEFE5 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E37A47922EC30C6100FBEFE5 /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E37A47912EC30C6100FBEFE5 /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E312C7402EC2F85C0003E8F1 /* Project object */;
 }

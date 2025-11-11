@@ -23,12 +23,18 @@ struct ContentView: View {
         .sheet(isPresented: $apiKeyUnset) {
             VStack{
                 Text("Set your API Key for Silicon Flow Here").font(.title)
-                TextField("API Key", text: $aiAPIKey)
+                TextField("API Key", text: $aiAPIKey).textContentType(.password).onSubmit {
+                    if !aiAPIKey.isEmpty {
+                        apiKeyUnset = false
+                    }
+                }
                 Text("Get your key at https://siliconflow.cn/").font(.footnote).foregroundStyle(.secondary)
             }.padding()
         }.onAppear {
             if aiAPIKey.isEmpty {
                 apiKeyUnset = true
+            } else {
+                apiKeyUnset = false
             }
         }
     }

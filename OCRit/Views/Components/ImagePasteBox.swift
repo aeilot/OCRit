@@ -22,7 +22,7 @@ struct ImagePasteBox: View {
     var body: some View {
         ZStack{
             if isUploading {
-                ProgressView("Uploading...")
+                ProgressView("Parsing...")
                     .font(.title)
                     .foregroundStyle(color)
             } else {
@@ -43,13 +43,7 @@ struct ImagePasteBox: View {
                         }
                     }
                 })
-//                    .onPasteCommand(of: [.image]) { providers in
-//                    if isPasting || isUploading {
-//                        return
-//                    }
-//                    handleImageProviders(providers)
-//                }
-                    .onDrop(of: [.image], isTargeted: nil) { providers in
+                .onDrop(of: [.image], isTargeted: nil) { providers in
                     if isPasting || isUploading {
                         return false
                     }

@@ -13,5 +13,9 @@ struct OCRitApp: App {
         Window("OCR it!", id: "main") {
             ContentView()
         }.windowStyle(.hiddenTitleBar).defaultSize(width: 500, height: 400).windowResizability(.contentSize)
+        
+        Window("Settings", id: "settingsWindow") {
+            SettingsView()
+        }.keyboardShortcut(",").defaultSize(width: 500, height: 300).windowResizability(.contentSize)
     }
 }

@@ -27,8 +27,7 @@ struct ResultView: View {
                 Markdown(showText)
                     .font(.body)
                     .textSelection(.enabled)
-                    .frame(minWidth: 250, maxWidth: 400, minHeight: 100, maxHeight: 300)
-                    .padding(5)
+                    .frame(maxWidth: .infinity, alignment: .leading)                    .padding(5)
             }.background(Color.secondary.opacity(0.05))
             .cornerRadius(8)
         }

@@ -22,7 +22,7 @@ class DeepSeekOCRService {
         }
         
         let base64 = imageData.base64EncodedString()
-        let payload = "\n<|grounding|>Convert the document to markdown."
+        let payload = "<|grounding|>Convert the document to markdown."
         
 #if DEBUG
         print(payload)

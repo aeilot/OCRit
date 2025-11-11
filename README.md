@@ -15,7 +15,7 @@ OCRit is a small macOS utility written in Swift that uses DeepSeek-OCR to recogn
 
 <img width="612" height="544" alt="image" src="https://github.com/user-attachments/assets/99df5ee4-0c17-4562-9cf5-9dab396af358" />
 
-<img width="612" height="544" alt="image" src="https://github.com/user-attachments/assets/f2993a71-8363-4bf1-a404-f34321638cab" />
+<img width="612" height="544" alt="Screenshot 2025-11-11 at 16 31 32" src="https://github.com/user-attachments/assets/3b51334d-b9f2-46b7-9b74-d3decec12d09" />
 
 ## Installation
 

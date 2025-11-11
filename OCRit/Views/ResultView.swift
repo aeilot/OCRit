@@ -9,7 +9,7 @@ import SwiftUI
 import MarkdownUI
 
 struct ResultView: View {
-    var showText: String = "# Hello"
+    var showText: String = ""
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
@@ -24,7 +24,7 @@ struct ResultView: View {
                 .buttonStyle(.bordered)
             }
             ScrollView {
-                Markdown(showText)
+                Markdown(convertEntriesToMarkdown(entries: parseOCRResults(from: showText)))
                     .font(.body)
                     .textSelection(.enabled)
                     .frame(maxWidth: .infinity, alignment: .leading)                    .padding(5)

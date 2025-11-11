@@ -17,6 +17,7 @@ struct ImagePasteBox: View {
     @State var alertTitle: String = ""
     @State var alertMessage: String = ""
     @State var imageURL: String = ""
+    @AppStorage("smms_api_key") var smmsApiKey: String = ""
     
     var body: some View {
         ZStack{
@@ -25,7 +26,7 @@ struct ImagePasteBox: View {
                     .font(.title)
                     .foregroundStyle(color)
             } else {
-                Label("Paste or Drop Your Image Here", systemImage: "document.on.clipboard")
+                Label("Drop Your Image Here", systemImage: "image")
                     .font(.title)
                     .foregroundStyle(color)
             }
@@ -41,12 +42,14 @@ struct ImagePasteBox: View {
                             color = .secondary
                         }
                     }
-                }).onPasteCommand(of: [.image]) { providers in
-                    if isPasting || isUploading {
-                        return
-                    }
-                    handleImageProviders(providers)
-                }.onDrop(of: [.image], isTargeted: nil) { providers in
+                })
+//                    .onPasteCommand(of: [.image]) { providers in
+//                    if isPasting || isUploading {
+//                        return
+//                    }
+//                    handleImageProviders(providers)
+//                }
+                    .onDrop(of: [.image], isTargeted: nil) { providers in
                     if isPasting || isUploading {
                         return false
                     }
@@ -79,6 +82,8 @@ struct ImagePasteBox: View {
             return
         }
         
+        print("PASTE")
+        
         provider.loadDataRepresentation(forTypeIdentifier: UTType.image.identifier) { data, error in
             DispatchQueue.main.async {
                 if let error = error {
@@ -103,7 +108,7 @@ struct ImagePasteBox: View {
         
         Task {
             do {
-                let url = try await SMSMService.shared.uploadImage(image: image)
+                let url = try await SMSMService.shared.uploadImage(image: image, apiKey: smmsApiKey)
                 
                 await MainActor.run {
                     imageURL = url

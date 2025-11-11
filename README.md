@@ -1,36 +1,35 @@
-# OCRit
+# OCR it!
 
 OCR it on macOS with DeepSeek-OCR.
 
-OCRit is a small macOS utility written in Swift that uses DeepSeek-OCR to recognize text from the screen and make it available for copying, searching, or further processing. It's designed to be lightweight and simple to use.
+OCRit is a small macOS utility written in Swift that uses DeepSeek-OCR to recognize text from photos and make it available for copying, searching, or further processing. It's designed to be lightweight and simple to use.
 
 ## Features
-- Capture a region of the screen and run OCR on it
-- Fast local OCR using DeepSeek-OCR integration
+- Drag a photo and run OCR on it
+- Fast OCR using DeepSeek-OCR integration
+- Recognize photo text content as Markdown with LaTeX support
 - Copy recognized text to the clipboard
 - Simple macOS-native UI written in Swift
 
+## Screenshots
+
+<img width="612" height="544" alt="image" src="https://github.com/user-attachments/assets/99df5ee4-0c17-4562-9cf5-9dab396af358" />
+
+<img width="612" height="544" alt="image" src="https://github.com/user-attachments/assets/f2993a71-8363-4bf1-a404-f34321638cab" />
+
 ## Requirements
-- macOS 11.0+ (Big Sur or later)
-- Xcode 13 or newer for building from source
-- (Optional) Any required model files or dependencies for DeepSeek-OCR — see project code for details
+- macOS 26.0+ (Tahoe or later)
+- Xcode 26 or newer for building from source
+ — see project code for details
 
 ## Building from source
 1. Clone the repository:
-
+```sh
    git clone https://github.com/aeilot/OCRit.git
-2. Open OCRit.xcodeproj (or OCRit.xcworkspace if using CocoaPods/Carthage/SwiftPM resources) in Xcode.
-3. Select a macOS target and a valid signing team in the project settings.
-4. Build and run (Cmd+R).
-
-## Usage
-1. Launch the app.
-2. Grant any requested permissions (Screen Recording and Accessibility) so the app can capture and interact with the screen.
-3. Use the app UI to select a region or capture the current screen.
-4. Wait briefly while OCR runs; the recognized text will appear and you can copy it to the clipboard.
-
-## Configuration
-- If DeepSeek-OCR requires model files or additional configuration, place them according to the instructions in the source files or the project's configuration section.
+```
+3. Open OCRit.xcodeproj (or OCRit.xcworkspace if using CocoaPods/Carthage/SwiftPM resources) in Xcode.
+4. Select a macOS target and a valid signing team in the project settings.
+5. Build and run (Cmd+R).
 
 ## Contributing
 Contributions and bug reports are welcome. If you'd like to contribute:
@@ -39,14 +38,11 @@ Contributions and bug reports are welcome. If you'd like to contribute:
 3. Open a pull request describing your changes.
 
 ## Acknowledgements
-- DeepSeek-OCR — thank you to the authors/contributors of the OCR model and tooling.
-
-## License
-No license file is included in this repository. If you'd like a specific license (for example, MIT), add a LICENSE file or tell me which license you prefer and I can add one.
+- [DeepSeek-OCR](https://github.com/deepseek-ai/DeepSeek-OCR/) — thank you to the authors of the OCR model and tooling.
 
 ## Contact
 If you have questions or need help, open an issue on the repository: https://github.com/aeilot/OCRit/issues
 
 ---
 
-This README was added by GitHub Copilot on request of the repository owner.
+Made with ❤️ by [Louis Deng](https://aeilot.top/)

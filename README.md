@@ -17,6 +17,10 @@ OCRit is a small macOS utility written in Swift that uses DeepSeek-OCR to recogn
 
 <img width="612" height="544" alt="image" src="https://github.com/user-attachments/assets/f2993a71-8363-4bf1-a404-f34321638cab" />
 
+## Installation
+
+Download it straight from the [release page](https://github.com/aeilot/OCRit/releases).
+
 ## Requirements
 - macOS 26.0+ (Tahoe or later)
 - Xcode 26 or newer for building from source
@@ -39,6 +43,7 @@ Contributions and bug reports are welcome. If you'd like to contribute:
 
 ## Acknowledgements
 - [DeepSeek-OCR](https://github.com/deepseek-ai/DeepSeek-OCR/) — thank you to the authors of the OCR model and tooling.
+- [Silicon Flow](https://siliconflow.cn/) - thank you for providing the model API.
 
 ## Contact
 If you have questions or need help, open an issue on the repository: https://github.com/aeilot/OCRit/issues

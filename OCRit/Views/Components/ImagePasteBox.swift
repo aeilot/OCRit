@@ -13,6 +13,7 @@ struct ImagePasteBox: View {
     @State var isPasting: Bool = false
     @State var color: Color = .secondary
     @State var isUploading: Bool = false
+    @State var showSheet: Bool = false
     @State var showAlert: Bool = false
     @State var alertTitle: String = ""
     @State var alertMessage: String = ""
@@ -64,6 +65,8 @@ struct ImagePasteBox: View {
             }
         } message: {
             Text(alertMessage)
+        }.sheet(isPresented: $showSheet){
+            ResultView(showText: ocrResult)
         }
             
     }
@@ -121,9 +124,7 @@ struct ImagePasteBox: View {
     }
     
     private func showSuccess(_ text: String) {
-        alertTitle = "Upload Success"
-        alertMessage = "\(text)"
-        showAlert = true
+        showSheet = true
     }
     
     private func showError(_ message: String) {

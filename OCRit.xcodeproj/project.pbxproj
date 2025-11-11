@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E37A47932EC30C6100FBEFE5 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = E37A47922EC30C6100FBEFE5 /* OpenAI */; };
+		E37A47B62EC319C400FBEFE5 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = E37A47B52EC319C400FBEFE5 /* MarkdownUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E37A47932EC30C6100FBEFE5 /* OpenAI in Frameworks */,
+				E37A47B62EC319C400FBEFE5 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +73,7 @@
 			name = OCRit;
 			packageProductDependencies = (
 				E37A47922EC30C6100FBEFE5 /* OpenAI */,
+				E37A47B52EC319C400FBEFE5 /* MarkdownUI */,
 			);
 			productName = OCRit;
 			productReference = E312C7482EC2F85C0003E8F1 /* OCRit.app */;
@@ -102,6 +105,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				E37A47912EC30C6100FBEFE5 /* XCRemoteSwiftPackageReference "OpenAI" */,
+				E37A47B42EC319C400FBEFE5 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E312C7492EC2F85C0003E8F1 /* Products */;
@@ -352,6 +356,14 @@
 				minimumVersion = 0.4.7;
 			};
 		};
+		E37A47B42EC319C400FBEFE5 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -359,6 +371,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E37A47912EC30C6100FBEFE5 /* XCRemoteSwiftPackageReference "OpenAI" */;
 			productName = OpenAI;
+		};
+		E37A47B52EC319C400FBEFE5 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E37A47B42EC319C400FBEFE5 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -16,8 +16,8 @@ struct ImagePasteBox: View {
     @State var showAlert: Bool = false
     @State var alertTitle: String = ""
     @State var alertMessage: String = ""
-    @State var imageURL: String = ""
-    @AppStorage("smms_api_key") var smmsApiKey: String = ""
+    @State var ocrResult: String = ""
+    @AppStorage("ai_api_key") var aiAPIKey: String = ""
     
     var body: some View {
         ZStack{
@@ -58,11 +58,11 @@ struct ImagePasteBox: View {
                 }
         }
         .alert(alertTitle, isPresented: $showAlert) {
-            if !imageURL.isEmpty {
+            if !ocrResult.isEmpty {
                 Button("Copy URL") {
                     let pasteboard = NSPasteboard.general
                     pasteboard.clearContents()
-                    pasteboard.setString(imageURL, forType: .string)
+                    pasteboard.setString(ocrResult, forType: .string)
                 }
                 Button("OK", role: .cancel) {}
             } else {
@@ -108,11 +108,11 @@ struct ImagePasteBox: View {
         
         Task {
             do {
-                let url = try await SMSMService.shared.uploadImage(image: image, apiKey: smmsApiKey)
+                let text = try await DeepSeekOCRService.shared.uploadImage(image: image, apiKey: aiAPIKey)
                 
                 await MainActor.run {
-                    imageURL = url
-                    showSuccess(url)
+                    ocrResult = text
+                    showSuccess(text)
                     isUploading = false
                     isPasting = false
                 }
@@ -126,16 +126,16 @@ struct ImagePasteBox: View {
         }
     }
     
-    private func showSuccess(_ url: String) {
+    private func showSuccess(_ text: String) {
         alertTitle = "Upload Success"
-        alertMessage = "Image URL: \(url)"
+        alertMessage = "\(text)"
         showAlert = true
     }
     
     private func showError(_ message: String) {
         alertTitle = "Error"
         alertMessage = message
-        imageURL = ""
+        ocrResult = ""
         showAlert = true
     }
 }

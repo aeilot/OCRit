@@ -10,8 +10,8 @@ import SwiftUI
 @main
 struct OCRitApp: App {
     var body: some Scene {
-        WindowGroup {
+        Window("OCR it!", id: "main") {
             ContentView()
-        }
+        }.windowStyle(.hiddenTitleBar).defaultSize(width: 500, height: 400).windowResizability(.contentSize)
     }
 }

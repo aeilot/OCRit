@@ -4,7 +4,7 @@ OCR it on macOS with DeepSeek-OCR.
 
 OCRit is a small macOS utility written in Swift that uses DeepSeek-OCR to recognize text from photos and make it available for copying, searching, or further processing. It's designed to be lightweight and simple to use.
 
-<a href="https://www.producthunt.com/products/ocr-it?utm_source=badge-follow&utm_medium=badge&utm_source=badge-ocr&#0045;it" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/follow.svg?product_id=1126550&theme=light" alt="OCR&#0032;it - OCR&#0032;it&#0032;on&#0032;macOS&#0032;with&#0032;DeepSeek&#0045;OCR | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+<a href="https://www.producthunt.com/products/ocr-it?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-ocr&#0045;it" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1037515&theme=light&t=1762994765567" alt="OCR&#0032;it - OCR&#0032;it&#0032;on&#0032;macOS&#0032;with&#0032;DeepSeek&#0045;OCR | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
 ## Features
 - Drag a photo and run OCR on it

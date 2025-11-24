@@ -36,7 +36,7 @@ struct SettingsView: View {
             }
             Section{
                 VStack(alignment: .leading){
-                    TextField("Silicon Flow API Key", text: $aiAPIKey).textFieldStyle(.roundedBorder).textContentType(.password).onSubmit {
+                    SecureField("Silicon Flow API Key", text: $aiAPIKey).textFieldStyle(.roundedBorder).textContentType(.password).onSubmit {
                         if !aiAPIKey.isEmpty {
                             apiKeyUnset = false
                         }
